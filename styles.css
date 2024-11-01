@@ -1,0 +1,374 @@
+/* General Theme Colors */
+:root {
+    --primary-color: #64ffda;
+    --secondary-color: #8892b0;
+    --bg-color: #0a192f;
+    --text-color: #ccd6f6;
+    --highlight-color: #233554;
+    --font-family: 'Fira Code', monospace;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    width: 100%;
+    padding: 20px 50px;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensures it uses full width */
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto; /* Pushes the logo to the left */
+}
+
+.logo img {
+    height: 30px; /* Adjust height as needed */
+    width: auto;
+    max-height: 50px; /* Ensures it doesn’t exceed the navbar height */
+}
+.logo img:hover {
+    cursor: pointer;
+    transform: translate(-3px, -3px);
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Space between navigation items */
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links li a::before {
+    content: attr(data-number);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+/* Button */
+.button {
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px; /* Space between nav and button */
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    transform: translate(-3px, -3px);
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Social Links */
+.social-links {
+    position: fixed;
+    bottom: 0;
+    left: 50px; /* Adjust left positioning as needed */
+    display: flex;
+    justify-content: space-between; /* Space out the links */
+    flex-direction: row; /* Ensure both sections are aligned in a row */
+   
+}
+
+.social-left {
+    display: flex; /* Flex for vertical alignment */
+    flex-direction: column; /* Align items vertically */
+
+}
+
+.social-left li {
+    margin: 5px 0; /* Space between links */
+    list-style: none;
+}
+
+.social-left li a {
+    
+    color: var(--secondary-color);
+    font-size: 1.2rem; /* Font size for icons */
+    display: inline-block;
+    padding: 10px; /* Padding for better click area */
+    transition: color 0.3s, transform 0.3s; /* Added transform for pop effect */
+}
+
+.social-left li a:hover {
+    color: var(--primary-color);
+    transform: translate(2px, -2px); /* Move up and to the right */
+}
+
+.social-right {
+    position: fixed;   /* Keeps it in a fixed position */
+    right: 50px;      /* Adjust this value as needed */
+    writing-mode: vertical-rl; /* Keep this for vertical alignment */
+    text-orientation: mixed; /* Ensure text orientation is correct */
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns to the start */
+    z-index: 1000; /* Ensures it's on top of other elements */
+}
+
+.social-right p {
+    display: flex;
+    align-items: center;
+    margin: 0; /* Removes default margin */
+    padding-bottom: 5px; /* Space for the line below */
+    color: var(--secondary-color); /* Color for the email text */
+    font-size: 0.85rem; /* Font size for visibility */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.social-right p a {
+    color: var(--secondary-color); /* Ensure link color contrasts well */
+    text-decoration: none; /* Removes underline */
+    margin-bottom: 20px;
+   
+}
+
+.social-right p a:hover {
+        color: var(--primary-color);
+        transform: translate(1px, -2px); /* Move up and to the right */
+}
+
+
+/* For line between social sections */
+.social-left::after  {
+    content: " ";
+    display: block;
+    width: 1px; /* Width of the vertical line */
+    height: 120px; 
+    background-color: var(--secondary-color); /* Color of the vertical line */
+    margin: 0px auto;
+}
+.social-right p::after {
+    content: ''; /* Creates a line after the email */
+    width: 1px; /* Thickness of the line */
+    height: 150px; /* Adjust height as needed */
+    background-color: var(--secondary-color); /* Line color */
+    margin: 0px auto ; /* Adds margin to position correctly */
+
+}
+
+/* Intro Section */
+.intro {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 20px;
+    margin-top: -70px;
+}
+
+.intro h2 {
+    font-size: 3rem;
+    font-weight: 600px;
+    color: var(--text-color);
+}
+
+.intro h3 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.intro p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 20px auto;
+    color: var(--secondary-color);
+}
+
+/* Sections */
+.section {
+    padding: 100px 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.section h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+.section h3:hover{
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+    text-decoration: underline;
+    transition: color 1s, transform 1s;
+    
+}
+
+
+.section p, .section ul {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+.section ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+#about li {
+    list-style:inside;
+    opacity: 0.6;
+    
+}
+#about li a {
+    opacity: 0.6;
+}
+#about li a:hover {
+    opacity: 1;
+}
+
+#about li:hover {
+    color: var(--text-color);
+    opacity: 1;
+    transform: translate(1px, -1px);
+    transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+  
+.calendar p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #64ffda;
+}
+
+.calendar {
+    padding: 20px;
+    background-color: var(--highlight-color); /* Background for calendar section */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto; /* Centering */
+}
+.holopin {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    background: var(--highlight-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #52e0c4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .intro h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro h3 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .social-links {
+        left: 20px; /* Adjusted for mobile */
+    }
+
+    .social-right {
+        right: 20px; /* Adjusted for mobile */
+    }
+}

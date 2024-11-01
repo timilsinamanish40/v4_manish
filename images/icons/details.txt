@@ -1,0 +1,10 @@
+include below link after <link rel="stylesheet" href="{% static 'path' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+include all icon links inside a tag
+<i class="fa-brands fa-github"></i>
+<i class="fa-brands fa-linkedin"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-x-twitter"></i> 
+
